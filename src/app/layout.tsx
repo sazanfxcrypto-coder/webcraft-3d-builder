@@ -1,41 +1,30 @@
-import '@/lib/i18n';
 import type { Metadata } from 'next';
 import './globals.css';
-import { I18nProvider } from '@/components/Providers/I18nProvider';
+import '@/lib/i18n';
 
 export const metadata: Metadata = {
-  title: 'WebCraft 3D - Universal Website Builder',
-  description: 'Create stunning websites for any business niche with our 3D-powered builder. Multi-language support, fully customizable.',
-  keywords: ['website builder', '3D', 'landing page', 'web3', 'e-commerce'],
+  title: 'WebCraft — Создание сайтов на заказ | Next.js + 3D',
+  description: 'Лендинги, корпоративные сайты, интернет-магазины, Web3. Быстро, качественно, честно. Работаю по РБ и за рубежом.',
+  keywords: 'разработка сайтов, веб-разработка, Next.js, React, Web3, лендинг',
   openGraph: {
     type: 'website',
-    url: 'https://webcraft3d.com',
-    title: 'WebCraft 3D - Universal Website Builder',
-    description: 'Create stunning 3D websites for any business niche',
-    images: [{
-      url: 'https://webcraft3d.com/og-image.png',
-      width: 1200,
-      height: 630,
-    }],
+    url: 'https://webcraft.by',
+    title: 'WebCraft — Создание сайтов на заказ',
+    description: 'Профессиональная разработка сайтов любой сложности',
+    images: [
+      {
+        url: 'https://webcraft.by/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className="bg-dark-bg text-white">
-        <I18nProvider>
-          {children}
-        </I18nProvider>
-      </body>
+    <html lang="ru">
+      <body>{children}</body>
     </html>
   );
 }
